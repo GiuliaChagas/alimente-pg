@@ -11,10 +11,14 @@ const WelcomeScreen = () => {
     navigation.navigate('Register');
   };
 
+  const handleLoginPress = () => {
+    navigation.navigate('Login');
+  };
+
   return (
     <View style={styles.container}>
       <Header />
-      <Button title="Login" />
+      <Button title="Login" onPress={handleLoginPress}/>
       <Button title="Registro" onPress={handleRegisterPress} />
     </View>
   );

@@ -5,6 +5,9 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import WelcomeScreen from '../WelcomeScreen';
 import RegisterScreen from '../RegisterScreen';
+import LoginScreen from '../LoginScreen';
+import HomeScreen from '../HomeScreen';
+import DetailsScreen from '../DetailsScreen';
 
 const Stack = createStackNavigator();
 
@@ -15,6 +18,9 @@ const AppNavigator = () => {
                 <Stack.Navigator>
                     <Stack.Screen name="Welcome" component={WelcomeScreen} />
                     <Stack.Screen name="Register" component={RegisterScreen} />
+                    <Stack.Screen name="Login" component={LoginScreen} />
+                    <Stack.Screen name="HomeScreen" component={HomeScreen} />
+                    <Stack.Screen name="DetailsScreen" component={DetailsScreen} />
                 </Stack.Navigator>
             </NavigationContainer>
         </SafeAreaView >

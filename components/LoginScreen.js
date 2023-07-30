@@ -4,7 +4,7 @@ import Header from './Header';
 import Button from './Button';
 import { useNavigation } from '@react-navigation/native';
 
-const RegisterScreen = () => {
+const LoginScreen = () => {
   const navigation = useNavigation();
   const [email, setEmail] = useState('');
   const [nome, setNome] = useState('');
@@ -12,14 +12,8 @@ const RegisterScreen = () => {
   const [documento, setDocumento] = useState('');
   const [senha, setSenha] = useState('');
 
-  const handleRegister = () => {
-    // Lógica para realizar o registro
-    console.log('Email:', email);
-    console.log('Nome:', nome);
-    console.log('Tipo:', tipo);
-    console.log('Documento:', documento);
-    console.log('Senha:', senha);
-    navigation.navigate('Welcome'); 
+  const handleLogin = () => {
+    navigation.navigate('HomeScreen');
   };
 
   const handleChangeTipo = (value) => {
@@ -30,18 +24,6 @@ const RegisterScreen = () => {
   return (
     <View style={styles.container}>
       <Header />
-      <TextInput
-        style={styles.input}
-        placeholder="E-mail"
-        onChangeText={setEmail}
-        value={email}
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="Nome"
-        onChangeText={setNome}
-        value={nome}
-      />
       <View style={styles.radioContainer}>
         <RadioButton
           label="Pessoa Física"
@@ -56,14 +38,6 @@ const RegisterScreen = () => {
           onChange={handleChangeTipo}
         />
       </View>
-      {tipo !== 'pj' && (
-        <TextInput
-          style={styles.input}
-          placeholder="Cad. único"
-          onChangeText={setDocumento}
-          value={documento}
-        />
-      )}
       <TextInput
         style={styles.input}
         placeholder={tipo === 'pf' ? 'CPF' : 'CNPJ'}
@@ -77,7 +51,7 @@ const RegisterScreen = () => {
         onChangeText={setSenha}
         value={senha}
       />
-      <Button title="Registrar" onPress={handleRegister} />
+      <Button title="Login" onPress={handleLogin} />
     </View>
   );
 };
@@ -135,4 +109,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default RegisterScreen;
+export default LoginScreen;
