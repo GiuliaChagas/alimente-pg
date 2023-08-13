@@ -8,21 +8,21 @@ import Banner from './Banner';
 import ProfileButton from './ProfileButton';
 
 const HomeScreen = () => {
-  const carnes = [
-    { id: '1', title: 'acém' },
-    { id: '2', title: 'patinho' },
-    { id: '3', title: 'paleta' },
+  const blocoUm = [
+    { id: '1', title: 'sacola arroz e feijao' },
+    { id: '2', title: 'sacola de verduras' },
+    { id: '3', title: 'sacola de banana e mamão' },
   ];
 
-  const frutas = [
-    { id: '1', title: 'banana' },
-    { id: '2', title: 'manga' },
-    { id: '3', title: 'uva' },
+  const blocoDois = [
+    { id: '1', title: 'cesta básica 2kg' },
+    { id: '2', title: 'cesta básica 3kg' },
+    { id: '3', title: 'cesta básica 4kg' },
   ];
 
-  const bebidas = [
-    { id: '1', title: 'água 150ml' },
-    { id: '2', title: 'chá gelado' },
+  const blocoTres = [
+    { id: '1', title: 'mistos padaria' },
+    { id: '2', title: 'mistos confeitaria' },
   ];
 
   const navigation = useNavigation();
@@ -44,27 +44,27 @@ const HomeScreen = () => {
       <ScrollView style={styles.scrollView}>
       <Banner/>
       <ProfileButton onPress={handleProfileScreen}/>
-      <Text style={styles.title}>Frutas</Text>
+      <Text style={styles.title}>Mais perto de você</Text>
       <CustomCarousel
-        data={frutas}
+        data={blocoUm}
         renderItem={renderCarousel}
         sliderWidth={300}
         itemWidth={150}
         layout="default"
       />
     <SpacingLine />
-    <Text style={styles.title}>Carnes</Text>
+    <Text style={styles.title}>Supermercado Nonato</Text>
       <CustomCarousel
-        data={carnes}
+        data={blocoDois}
         renderItem={renderCarousel}
         sliderWidth={300}
         itemWidth={150}
         layout="default"
       />
     <SpacingLine />
-    <Text style={styles.title}>Bebidas</Text>
+    <Text style={styles.title}>Padaria da Samira</Text>
       <CustomCarousel
-        data={bebidas}
+        data={blocoTres}
         renderItem={renderCarousel}
         sliderWidth={300}
         itemWidth={150}
