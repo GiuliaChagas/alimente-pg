@@ -6,14 +6,16 @@ import { useNavigation } from '@react-navigation/native';
 
 const LoginScreen = () => {
   const navigation = useNavigation();
-  const [email, setEmail] = useState('');
-  const [nome, setNome] = useState('');
   const [tipo, setTipo] = useState('pf'); // 'pf' para pessoa física, 'pj' para pessoa jurídica
   const [documento, setDocumento] = useState('');
   const [senha, setSenha] = useState('');
 
   const handleLogin = () => {
-    navigation.navigate('HomeScreen');
+    if(tipo == 'pf') {
+      navigation.navigate('HomeScreen');
+    } else {
+      navigation.navigate('PessoaJuridicaScreen');
+    }
   };
 
   const handleChangeTipo = (value) => {

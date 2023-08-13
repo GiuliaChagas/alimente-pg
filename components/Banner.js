@@ -15,8 +15,9 @@ const Banner = () => {
         backgroundColor: '#b2dfdb', 
         paddingVertical: 10,
         paddingHorizontal: 20,
+        marginRight: 100,
         margin: 10,
-        marginTop: 15,
+        marginTop: 12,
         borderRadius: 5,
       },
       text: {

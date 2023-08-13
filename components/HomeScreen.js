@@ -5,6 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 import CustomCarousel from './CustomCarousel';
 import SpacingLine from './SpacingLine';
 import Banner from './Banner';
+import ProfileButton from './ProfileButton';
 
 const HomeScreen = () => {
   const carnes = [
@@ -30,6 +31,10 @@ const HomeScreen = () => {
     navigation.navigate('DetailsScreen');
   };
 
+  const handleProfileScreen = () => {
+    navigation.navigate('ProfileScreen');
+  };
+
   const renderCarousel = ({ item }) => (
     <FoodCard title={item.title} onPress={() => handleDetailsPress()} />
   );
@@ -38,6 +43,7 @@ const HomeScreen = () => {
     <SafeAreaView contentContainerStyle={styles.container}>
       <ScrollView style={styles.scrollView}>
       <Banner/>
+      <ProfileButton onPress={handleProfileScreen}/>
       <Text style={styles.title}>Frutas</Text>
       <CustomCarousel
         data={frutas}

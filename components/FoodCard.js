@@ -1,13 +1,12 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import Button from './Button';
+import { View, Text, StyleSheet } from 'react-native';
 
 const FoodCard = ({ title, onPress }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{title}</Text>
-      <TouchableOpacity style={styles.button} onPress={onPress}>
-        <Text style={styles.buttonText}>detalhes</Text>
-      </TouchableOpacity>
+      <Button title="detalhes" onPress={onPress} />
     </View>
   );
 };
